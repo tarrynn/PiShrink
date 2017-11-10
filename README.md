@@ -32,6 +32,14 @@ The filesystem on /dev/loop1 is now 773603 blocks long.
 Shrunk pi.img from 30G to 3.1G
 ```
 
+## macOS Support ##
+
+It is not currently possible to run PiShrink natively in macOS. Included in the repo is a `Dockerfile` and `docker-compose.yml` that should allow you to run PiShrink on a Docker host, including a macOS one.
+
+Note that the cloned repo is mouted as a Docker host mount so any output file should be created under `/pishrink` to have it persisted on the host.
+
+Example: `docker-compose run pishrink /pishrink/pishrink.sh /pishrink/someimage.img`
+
 ## Contributing ##
 If you find a bug please create an issue for it. If you would like a new feature added, you can create an issue for it but I can't promise that I will get to it.
 
